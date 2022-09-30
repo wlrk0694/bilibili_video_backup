@@ -58,7 +58,8 @@ for i in range(updated.shape[0]):
     dl.rename_xmls(source)
     videos = dl.check_multi(source)
     if len(videos) == 0:
-        invalid_df = pd.concat([invalid_df,updated.loc[i]])
+        df1 = pd.DataFrame([list(updated.loc[i])],columns=fields)
+        invalid_df = pd.concat([invalid_df,df1])
     elif len(videos) == 1:
         converted = dl.conv_sub(source,videos[0])
         dl.move_files(source,destination,videos[0],converted)
