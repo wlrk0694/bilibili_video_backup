@@ -42,11 +42,12 @@ invalid_path = os.path.dirname(__file__)+'/list/invalid_list.csv'
 
 # read invalid csv into dataframe
 invalid = [] # Create an empty list for invalid URLs
-with open(invalid_path, 'r') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        if 'video_date' not in row:
-            invalid.append(row)
+if os.path.exists(invalid_path):
+    with open(invalid_path, 'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if 'video_date' not in row:
+                invalid.append(row)
 invalid_df = pd.DataFrame(invalid,columns = fields)
 
 # batch download videos - new downloads
