@@ -11,11 +11,15 @@ WARNING: This project is strictly for personal backup usage. Please do not redis
 
 First you need to install a few Python modules and small tool on your local machine.
 
-- Requests module (Please refer to [documentation](https://pypi.org/project/requests/) for further information)
-- bs4 module (Please refer to [documentation](https://pypi.org/project/beautifulsoup4/) for further information)
-- cv2 module (Please refer to [documentation](https://pypi.org/project/opencv-python/) for further information)
-- [you-get](https://github.com/soimort/you-get) from GitHub, please install via brew (MacOS) or spool
-- [danmaku2ass](https://github.com/m13253/danmaku2ass) from [m13253](https://github.com/m13253)
+Please run "pip install -r requirements.txt" to install the following module at first
+- Requests
+- pandas
+- beautifulsoup4
+- opencv-python
+
+Then 
+- install [you-get](https://github.com/soimort/you-get) from GitHub via brew (MacOS) or spool
+- download the python script in [danmaku2ass](https://github.com/m13253/danmaku2ass) from [m13253](https://github.com/m13253) and put in the same folder as other files
 
 
 ### Contents
