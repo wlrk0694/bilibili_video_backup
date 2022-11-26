@@ -75,7 +75,35 @@ for i in range(updated.shape[0]):
             for v in videos:
                 converted = dl.conv_sub(source,v)
                 dl.move_files(source,destination,v,converted)
-    
+
+# Download videos out of modified list
+if modified.shape[0] != 0:
+    print('Start downloading modified ones...')
+    for i in range(modified.shape[0]):
+        url = modified.loc[i,"video_url"]
+        print('')
+        print('Downloading',str(i+1),'out of',str(modified.shape[0]),' videos...')
+        dl.dl_bilibili(source,url)
+        dl.rename_xmls(source)
+        videos = dl.check_multi(source)
+        if len(videos) == 0:
+            df1 = pd.DataFrame([list(modified.loc[i])],columns=fields)
+            invalid_df = pd.concat([invalid_df,df1])
+        elif len(videos) == 1:
+            converted = dl.conv_sub(source,videos[0])
+            dl.move_files(source,destination,videos[0],converted)
+        else:
+            converted = []
+            for v in videos:
+                conv = dl.conv_sub(source,v)
+                converted.append(conv)
+            if 'False' in converted:
+                print('***Warning: Moving failed, video download is not completed.')
+            else:
+                for v in videos:
+                    converted = dl.conv_sub(source,v)
+                    dl.move_files(source,destination,v,converted)
+
 if len(invalid) != 0:
     invalid_df.to_csv('invalid_list.csv',index = False)
 print('')
