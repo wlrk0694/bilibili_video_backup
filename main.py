@@ -6,6 +6,8 @@ import upd_util as upd
 
 ## Update video list, get new and modified video uploads
 list_path = os.path.dirname(__file__)+'/list/video_list.csv'
+if not os.path.exists('file'):
+    os.makedirs('file') # Create video file folder if non-exist
 
 # old version website, 20 videos per page, keyword: Billy Sheehan, sorted by release date (website built-in function)
 base_url = 'https://search.bilibili.com/all?keyword=Billy%20Sheehan&order=pubdate&duration=0&tids_1=0'
@@ -17,7 +19,7 @@ print('')
 print('Scraped '+str(len(new)) + ' videos during this session.')
 
 fields = ['video_date','video_title','video_time','video_up','up_uid','video_url']
-[updated,modified,merged] = upd.update_list(new,list_path)
+[updated,modified,merged] = upd.update_list(new,fields,list_path)
 
 print(str(updated.shape[0]+modified.shape[0])+ ' new videos have been released since last scraping.')
 if updated.shape[0]+modified.shape[0] != 0:
@@ -48,7 +50,9 @@ if os.path.exists(invalid_path):
         for row in reader:
             if 'video_date' not in row:
                 invalid.append(row)
-invalid_df = pd.DataFrame(invalid,columns = fields)
+    invalid_df = pd.DataFrame(invalid,columns = fields)
+else:
+    invalid_df = pd.DataFrame(columns = fields)
 
 # batch download videos - new downloads
 for i in range(updated.shape[0]):
