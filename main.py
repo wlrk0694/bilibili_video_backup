@@ -1,8 +1,8 @@
 import os
 import csv
 import pandas as pd
-import single_conversion as dl
-import update_list_from_web as upd
+import dl_util as dl
+import upd_util as upd
 
 ## Update video list, get new and modified video uploads
 list_path = os.path.dirname(__file__)+'/list/video_list.csv'

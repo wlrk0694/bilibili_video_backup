@@ -64,6 +64,9 @@ print('Retrieve search result for keyword "Billy Sheehan"...')
 videos = create_list(urls)
 print('List retrieved, '+str(len(videos))+' videos in total.')
 print('Create list csv file...')
+
+if not os.path.exists('list'):
+    os.makedirs('list')
 list_path = os.path.dirname(__file__)+'/list/video_list.csv' # absolute path of video list file
 create_csv(videos,list_path)
 print('List file created under /list folder.')

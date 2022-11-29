@@ -29,11 +29,11 @@ This project consists of 5 scripts:
 #### 1. get_full_video_list
 Get a list of search result (maximum 50 pages) and create a csv file to save the video list info. One piece of video info consists of uploading date, video title, video duration, video uploader, uid, video URL
 
-#### 2. update_list_from_web (module)
+#### 2. upd_util (module)
 Update your existing scraping results and update the list csv file
 Caution: This script should only be used after you have executed get_full_video_list.py and retrieved the video list csv file.
 
-#### 3. single_conversion
+#### 3. dl_util
 Download the video from given URL(s), convert all XMLs downloaded by you-get to ass format using Danmaku2Ass. Eventually completed downloads will be moved to file/ folder in the root directory.
 Can be used for either batch download or single download. Input should be a single URL or a list of URLs.
 
@@ -41,7 +41,7 @@ Can be used for either batch download or single download. Input should be a sing
 Convert XML downloaded by [you-get](https://github.com/soimort/you-get) from GitHub and convert it to ass format. Please refer to [danmaku2ass](https://github.com/m13253/danmaku2ass) github page for further information.
 
 #### 5. main
-Include non-function part from update_list_from_web module, run main.py will get same result as old-version update_list_from_web script and single_conversion script
+Include non-function part from upd_util and dl_util module
 
 ## Existing issues
-- Modified videos need pulling manually
+- When unfinished downloads exist, your later downloads will always show moving failed warning.
