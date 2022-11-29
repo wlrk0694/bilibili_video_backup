@@ -16,9 +16,10 @@ Please run "pip install -r requirements.txt" to install the following module at 
 - pandas
 - beautifulsoup4
 - opencv-python
+- you-get
 
 Then 
-- install [you-get](https://github.com/soimort/you-get) from GitHub via brew (MacOS) or spool
+- install [ffmpeg](https://ffmpeg.org/download.html) via brew (MacOS) or tar (WinOS)
 - download the python script in [danmaku2ass](https://github.com/m13253/danmaku2ass) from [m13253](https://github.com/m13253) and put in the same folder as other files
 
 
