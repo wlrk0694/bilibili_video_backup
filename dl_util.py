@@ -5,7 +5,7 @@ import shutil
 
 # Download video(s) from bilibili URL (may be incompleted or unable to download due to invalid URL)
 def dl_bilibili(filepath,url):
-    s = os.system('you-get -o {} --playlist -k "{}"'.format(filepath,url))
+    s = os.system('you-get -o {} --playlist "{}"'.format(filepath,url))
     # --playlist command can be used for single video as well   
 
 # Convert names of all XML files in the folder (only existing ones, no danger of error)
