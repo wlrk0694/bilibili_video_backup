@@ -20,7 +20,7 @@ Please run "pip install -r requirements.txt" to install the following module at 
 
 Then 
 - install [ffmpeg](https://ffmpeg.org/download.html) via brew (MacOS) or tar (WinOS)
-- download the python script in [danmaku2ass](https://github.com/m13253/danmaku2ass) from [m13253](https://github.com/m13253) and put in the same folder as other files
+- download the python script from [danmaku2ass](https://github.com/m13253/danmaku2ass) from [m13253](https://github.com/m13253) and put in the same folder as other files
 
 
 ### Contents
@@ -43,5 +43,6 @@ Convert XML downloaded by [you-get](https://github.com/soimort/you-get) from Git
 #### 5. main
 Include non-function part from upd_util and dl_util module
 
-## Existing issues
-- When unfinished downloads exist, your later downloads will always show moving failed warning.
+## Existing issues 
+- For non-user or users without subscription on bilibili, the highest quality of downloaded videos is limited. It's suggested that you use an account with subscription if possible. For usage, please refer to "Load Cookies" session in [you-get official website](https://you-get.org/).
+- When unfinished downloads exist in folder, your later download process will always display moving failed warning.
