@@ -33,7 +33,7 @@ Get a list of search result (maximum 50 pages) and create a csv file to save the
 Update your existing scraping results and update the list csv file
 Caution: This script should only be used after you have executed get_full_video_list.py and retrieved the video list csv file.
 
-#### 3. dl_util
+#### 3. dl_util (module)
 Download the video from given URL(s), convert all XMLs downloaded by you-get to ass format using Danmaku2Ass. Eventually completed downloads will be moved to file/ folder in the root directory.
 Can be used for either batch download or single download. Input should be a single URL or a list of URLs.
 
@@ -46,3 +46,6 @@ Include non-function part from upd_util and dl_util module
 ## Existing issues 
 - For non-user or users without subscription on bilibili, the highest quality of downloaded videos is limited. It's suggested that you use an account with subscription if possible. For usage, please refer to "Load Cookies" session in [you-get official website](https://you-get.org/).
 - When unfinished downloads exist in folder, your later download process will always display moving failed warning.
+
+## Updates
+2023-03-26 Add a new parameter and loop to avoid empty response in upd_util module. Will replace with better approach to avoid reCAPTCHA once possible.

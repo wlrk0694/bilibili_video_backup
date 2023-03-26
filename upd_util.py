@@ -41,7 +41,10 @@ def get_url_info_list(url):
 def create_list(urls):
     new_list = []
     for url in urls:
-        videos = get_url_info_list(url)
+        resp_len = 0 # setup a parameter to repeat requests until get_url_info_list() method return non-empty list
+        while resp_len == 0:
+            videos = get_url_info_list(url)
+            resp_len = len(videos)
         for v in videos:
             if v not in new_list:
                 new_list.append(v)
