@@ -41,7 +41,8 @@ def conv_sub(filepath,video_file):
         print('***Warning: Download is not completed, please redownload manually.')
     else:
         [width,height] = find_resolution(filepath,video_file)
-        danmaku_name = video_file[:(len(video_file)-4)]
+        video_path = filepath + video_file
+        danmaku_name = video_path[:(len(video_path)-4)]
         danmaku_file = danmaku_name +'.xml'
         if os.path.isfile(os.path.join(filepath, danmaku_file)):
             sub_convert = danmaku_name+'.ass'
