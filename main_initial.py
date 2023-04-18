@@ -45,7 +45,7 @@ for i in range(new_df.shape[0]):
     dl.rename_xmls(source)
     videos = dl.check_multi(source)
     if len(videos) == 0:
-        df1 = pd.DataFrame([list(new_df.loc[i])],columns=fields)
+        df1 = pd.DataFrame([new_df.loc[i].to_list()],columns=fields)
         invalid_df = pd.concat([invalid_df,df1])
     elif len(videos) == 1:
         converted = dl.conv_sub(source,videos[0])
