@@ -63,7 +63,7 @@ for i in range(updated.shape[0]):
     dl.rename_xmls(source)
     videos = dl.check_multi(source)
     if len(videos) == 0:
-        df1 = pd.DataFrame([list(updated.loc[i])],columns=fields)
+        df1 = pd.DataFrame([updated.loc[i].to_list()],columns=fields)
         invalid_df = pd.concat([invalid_df,df1])
     elif len(videos) == 1:
         converted = dl.conv_sub(source,videos[0])
@@ -91,7 +91,7 @@ if modified.shape[0] != 0:
         dl.rename_xmls(source)
         videos = dl.check_multi(source)
         if len(videos) == 0:
-            df1 = pd.DataFrame([list(modified.loc[i])],columns=fields)
+            df1 = pd.DataFrame([modified.loc[i].to_list()],columns=fields)
             invalid_df = pd.concat([invalid_df,df1])
         elif len(videos) == 1:
             converted = dl.conv_sub(source,videos[0])
